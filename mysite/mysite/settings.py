@@ -23,12 +23,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-g*m)-wlqd-(a-n+gt6(%5_gm+t2k89@u+brnn*b0u+=s=-60k3'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ["www.example.com"]
-DEFAULT_FROM_EMAIL = "webmaster@example.com"
+ALLOWED_HOSTS = []
 
-MY_SETTING = [str(i) for i in range(30)]
 
 # Application definition
 
