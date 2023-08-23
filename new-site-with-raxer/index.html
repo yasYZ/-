@@ -4,22 +4,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
     <!-- custom css -->
     <link rel="stylesheet" href="../new-site-with-raxer/style.css" />
 </head>
 <body>
     <!-- navbar -->
     <nav class="navbar">
-        <a class="logo" href="#"></a>
+<div class="menubar">
+        <a class="logo" href="#"><img src="../new-site-with-raxer/vigiato-logo-removebg-preview.png" width="200" height="100"></a>
         <ul>
-            <a href="#"><li>نامشخص</li></a>
-            <a href="#"><li>سرگرمی</li></a>
-            <a href="#"><li>فیلم و سریال</li></a>
-            <a href="#"><li>آموزش</li></a>
-            <a href="#"><li>سخت افزار</li></a>
-            <a href="#"><li>بررسی بازی ها</li></a>
-            <a href="#"><li>اخبار و مقالات</li></a>
+            <li><a href="#">نامشخص</a></li>
+            <li><a href="#">سرگرمی</a></li>
+            <li><a href="#">فیلم و سریال</a></li>
+            <li><a href="#">آموزش</a></li>
+            <li><a href="#">سخت افزار</a></li>
+            <li><a href="#">بررسی بازی ها</a></li>
+            <li class="news"><a href="#">اخبار و مقالات</a>
+            <div class="sub-menu-1">
+                <ul>
+                    <li><a href="#">اخبار و گزارش ها</a>
+                    <li><a href="#">مقالات</a></li>
+                    <li><a href="#">نگاه نخست</a></li>
+                    <li><a href="#">برترین ها</a></li>
+                </ul>
+            </li>
+            </div>
         </ul>
+        <a class="login" href="#">ورود</a>
+        <a class="sign_up" href="#">ثبت نام</a>
+    <div class="search-box">
+        <form class="searchbar" action="">
+            <input type="text" name="search" id="srch" placeholder="جست و جو">
+            <button type="submit"><i class='fa-solid fa-magnifying-glass' style='color: rgb(0, 0, 0)'></i></button>
+        </form>
+    </div>
+</div>
     </nav>
 </body>
 </html>
