@@ -31,6 +31,7 @@ def adding_resourse():
     combo.current(2)
     combo.grid(column=1, row=0)
     def update_fun1(event):
+        print(selected_option)
 
     combo.bind('<<ComboboxSelected>>', update_fun1)
 
