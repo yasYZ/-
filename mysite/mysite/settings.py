@@ -69,7 +69,10 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'mysite.wsgi.application'
+# WSGI_APPLICATION = 'mysite.wsgi.application'
+
+# Channels
+ASGI_APPLICATION = 'mysite.routing.application'
 
 
 # Database
