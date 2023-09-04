@@ -63,22 +63,6 @@
         socket.onclose = function (e) {
             console.error('Soket closed unexpectly');
         };
-
-        document.querySelector('#text-input').focus();
-        document.querySelector('#text-input').onkeyup = function (e) {
-            if (e.keyCode === 13) { // enter, return
-                document.querySelector('#text-submit').click();
-            }
-        };
-
-        document.querySelector('#text-submit').onclick = function (e) {
-            var messageInputDom = document.querySelector('#text-input');
-            var message = messageInputDom.value;
-            soket.send(message);
-
-            messageInputDom.value = '';
-        };
-
     </script>
 </body>
 </html>
