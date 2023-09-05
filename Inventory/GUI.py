@@ -1,66 +1,84 @@
-import tkinter
-from tkinter.ttk import *
+import tkinter as tk
+from tkinter.messagebox import showinfo
+from tkinter import ttk
 
-windows = tkinter.Tk()
+
+windows = tk.Tk()
 
 windows.title("انبار داری یزدان بافت | pxc")
-
-
-def show_result():
-    new_window3 = tkinter.Tk()
-    new_window3.title("نمایش نتایج | pxc")
-    new_window3.geometry("1280x720")
-
-
-
-    new_window3.mainloop()
-
-
-
-def adding_resourse():
-    #litri - kiloii - tedadi - mohemmat = 2 anbar -. anbar masrafi -> mavad avvalie
-    new_window = tkinter.Tk()
-    new_window.title("افزودن کالا | pxc")
-    new_window.geometry("1280x720")
-
-    selected_option = tkinter.StringVar()
-    combo = Combobox(windows, textvariable=selected_option)
-    combo = Combobox(new_window)
-    combo["values"] = ("KG", "Liter", "Number")
-    combo["state"] = "readonly"
-    combo.current(2)
-    combo.grid(column=1, row=0)
-    def update_fun1(event):
-        print(selected_option)
-
-    combo.bind('<<ComboboxSelected>>', update_fun1)
-
-    spin = Spinbox(new_window, from_=0, to=1000000000)
-    spin.grid(column=0, row=0)
-
-
-    new_window.mainloop()
-
-
-def exporting_resource():
-    new_window2 = tkinter.Tk()
-    new_window2.title("ترخیص کالا | pxc")
-    new_window2.geometry("1280x720")
-
-    new_window2.mainloop()
-
-
-
-
-bt1 = tkinter.Button(windows, height=3, width=15, text="افزودن کالا", bg="blue", fg="white", command=adding_resourse).pack()
-l1 = tkinter.Label(text="یرای افزودن کالا لطفا روی دکمه بالا کلیک کنید").pack()
-bt2 = tkinter.Button(windows, height=3, width=15, text="ترخیص کالا", bg="blue", fg="white", command=exporting_resource).pack()
-l2 = tkinter.Label(text="برای ترخیص کالا روی دکمه بالا کلیک کنید").pack()
-bt3 = tkinter.Button(windows, height=3, width=15, text="نمایش نتایج", bg="blue", fg="white", command=show_result).pack()
-l3 = tkinter.Label(text="برای نمایش نتایج روی دکمه بالا کلیک کنید").pack()
-
-
-
-
 windows.geometry("1280x720")
+
+
+Tab_control = ttk.Notebook(windows, width=5, height=1)
+adding_resource_tab1 = ttk.Frame(Tab_control)
+Tab_control.add(adding_resource_tab1, text="adding resources")
+Tab_control.pack(expand=1, fill="both")
+
+
+lbl = ttk.Label(text="انبار داری یزدان بافت | PXC app")
+lbl1 = ttk.Label(text=".  .  .")
+lbl2 = ttk.Label(text="Support in telegram @yasYZ_YZ")
+lbl3 = ttk.Label(text="CopyRight CC by @yasYZ")
+lbl.pack(ipadx=10, ipady=10)
+lbl1.pack(ipadx=10, ipady=10)
+lbl2.pack(side="right")
+lbl3.pack(side="left")
+lbl_upper = ttk.Label(adding_resource_tab1, text="واحد اندازه گیری")
+lbl_upper.pack()
+
+
+selected_var = tk.StringVar()
+combo = ttk.Combobox(adding_resource_tab1, width=10, height=1, textvariable=selected_var)
+combo["values"] = ("KG", "Liter", "Number")
+combo["state"] = "readonly"
+combo.pack()
+
+
+def Find_Value_func1(event):
+    selected_value1 = selected_var.get()
+    showinfo(
+        title='Result',
+        message=f'You selected {selected_value1}!'
+    )
+
+
+combo.bind("<<ComboboxSelected>>", Find_Value_func1)
+
+
+lbl2_upper = ttk.Label(adding_resource_tab1, text="مقدار")
+lbl2_upper.pack()
+
+def value_changed():
+    print(spin_value.get())
+
+spin_value = tk.StringVar(value=0)
+spin_box = ttk.Spinbox(adding_resource_tab1, from_=0, to=1000000000000, textvariable=spin_value, wrap=True, command=value_changed)
+
+
+spin_box.pack()
+
+lbl3_upper = ttk.Label(adding_resource_tab1, text="دسته بندی")
+lbl3_upper.pack()
+
+
+selected_var2 = tk.StringVar()
+combo2 = ttk.Combobox(adding_resource_tab1, width=17, height=12, textvariable=selected_var2)
+combo2["values"] = ("انبار درجریان ساخت", "انبار مواد اولیه", "انبار کالای تولید شده")
+combo2["state"] = "readonly"
+combo2.pack()
+
+
+def Find_Value_func2(event):
+    selected_value = selected_var2.get()
+    showinfo(
+        title='Result',
+        message=f'You selected {selected_value}!'
+    )
+
+
+combo2.bind("<<ComboboxSelected>>", Find_Value_func2)
+
+# litri - kiloii - tedadi - mohemmat = 2 anbar -. anbar masrafi -> mavad avvalie
+
+windows.geometry("500x500")
 windows.mainloop()
