@@ -13,4 +13,5 @@ def Excel_data():
 
     df.to_excel('data.xlsx', sheet_name='data')
 
+
 Excel_data()
