@@ -27,15 +27,15 @@ lbl_upper = ttk.Label(adding_resource_tab1, text="واحد اندازه گیری
 lbl_upper.pack()
 
 
-selected_var = tk.StringVar()
-combo = ttk.Combobox(adding_resource_tab1, width=10, height=1, textvariable=selected_var)
+selected_var1 = tk.StringVar()
+combo = ttk.Combobox(adding_resource_tab1, width=10, height=1, textvariable=selected_var1)
 combo["values"] = ("KG", "Liter", "Number")
 combo["state"] = "readonly"
 combo.pack()
 
 
 def Find_Value_func1(event):
-    selected_value1 = selected_var.get()
+    selected_value1 = selected_var1.get()
     showinfo(
         title='Result',
         message=f'You selected {selected_value1}!'
@@ -62,21 +62,40 @@ lbl3_upper.pack()
 
 
 selected_var2 = tk.StringVar()
-combo2 = ttk.Combobox(adding_resource_tab1, width=17, height=12, textvariable=selected_var2)
+combo2 = ttk.Combobox(adding_resource_tab1, width=17, height=1, textvariable=selected_var2)
 combo2["values"] = ("انبار درجریان ساخت", "انبار مواد اولیه", "انبار کالای تولید شده")
 combo2["state"] = "readonly"
 combo2.pack()
 
 
 def Find_Value_func2(event):
-    selected_value = selected_var2.get()
+    selected_value2 = selected_var2.get()
     showinfo(
         title='Result',
-        message=f'You selected {selected_value}!'
+        message=f'You selected {selected_value2}!'
     )
 
 
 combo2.bind("<<ComboboxSelected>>", Find_Value_func2)
+
+
+lbl4_upper = ttk.Label(adding_resource_tab1, text="نام کالا")
+lbl4_upper.pack()
+
+
+def Find_Value_func3():
+    Entry = txt1.get()
+    showinfo(
+        title='Result',
+        message=f'You selected {Entry}!'
+    )
+
+
+txt1 = ttk.Entry(adding_resource_tab1)
+txt1.pack()
+
+btn1 = tk.Button(adding_resource_tab1, height=3, width=15, text="Submit", bg="blue", fg="white", command=Find_Value_func3)
+btn1.pack()
 
 # litri - kiloii - tedadi - mohemmat = 2 anbar -. anbar masrafi -> mavad avvalie
 
