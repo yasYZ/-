@@ -97,7 +97,6 @@ txt1.pack()
 btn1 = tk.Button(adding_resource_tab1, height=3, width=15, text="Submit", bg="blue", fg="white", command=Find_Value_func3)
 btn1.pack()
 
-# litri - kiloii - tedadi - mohemmat = 2 anbar -. anbar masrafi -> mavad avvalie
 
 windows.geometry("500x500")
 windows.mainloop()
