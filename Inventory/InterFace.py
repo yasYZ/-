@@ -1,7 +1,7 @@
 import tkinter as tk
 from tkinter.messagebox import showinfo
 from tkinter import ttk
-
+import data
 
 windows = tk.Tk()
 
@@ -33,11 +33,12 @@ combo.pack()
 
 def Find_Value_func1(event):
     selected_value1 = selected_var1.get()
+    print(selected_value1)
     showinfo(
         title='Result',
         message=f'You selected {selected_value1}!'
     )
-
+    data.value1.append(selected_value1)
 
 combo.bind("<<ComboboxSelected>>", Find_Value_func1)
 
@@ -45,13 +46,16 @@ lbl2_upper = ttk.Label(adding_resource_tab1, text="مقدار")
 lbl2_upper.pack()
 
 def value_changed():
-    print(spin_value.get())
+    spin = spin_value.get()
+    data.Number1.append(spin)
 
 
 spin_value = tk.StringVar(value=0)
 spin_box = ttk.Spinbox(adding_resource_tab1, from_=0, to=1000000000000, textvariable=spin_value, wrap=True, command=value_changed)
-
 spin_box.pack()
+
+btn3 = tk.Button(adding_resource_tab1, text="✔", width=2, height=1, bg="blue", fg="green", command=value_changed)
+btn3.pack()
 
 lbl3_upper = ttk.Label(adding_resource_tab1, text="دسته بندی")
 lbl3_upper.pack()
@@ -65,10 +69,13 @@ combo2.pack()
 
 def Find_Value_func2(event):
     selected_value2 = selected_var2.get()
+
     showinfo(
         title='Result',
         message=f'You selected {selected_value2}!'
     )
+
+    data.category1.append(selected_value2)
 
 
 combo2.bind("<<ComboboxSelected>>", Find_Value_func2)
@@ -77,20 +84,28 @@ lbl4_upper = ttk.Label(adding_resource_tab1, text="نام کالا")
 lbl4_upper.pack()
 
 
-def Find_Value_func3():
+def Find_Value_func3_Entry():
     Entry = txt1.get()
     showinfo(
         title='Result',
         message=f'You selected {Entry}!'
     )
+    data.name1.append(Entry)
 
 
 txt1 = ttk.Entry(adding_resource_tab1)
 txt1.pack()
 
-btn1 = tk.Button(adding_resource_tab1, height=3, width=15, text="Submit", bg="blue", fg="white", command=Find_Value_func3)
+btn1 = tk.Button(adding_resource_tab1, height=1, width=2, text="✔", bg="blue", fg="green", command=Find_Value_func3_Entry)
 btn1.pack()
 
+
+def data_handeler():
+    data.Excel()
+
+
+btn2 = tk.Button(adding_resource_tab1, height=2, width=10, text="Submit", bg="blue", fg="red", command=data_handeler)
+btn2.pack()
 
 windows.geometry("500x500")
 windows.mainloop()

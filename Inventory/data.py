@@ -1,17 +1,19 @@
 import pandas as pd
-
+import tkinter as tk
+import pd_val_def as val
 
 def Excel_data():
     """Writes current data in Excel"""
-    df = pd.DataFrame([[f"value", f"Number", f"category"],
-                       [f"12", f"22", f"32"],
-                       [f"31", f"32", f"33"],
-                       [f"31", f"32", f"33"],
-                       [f"31", f"32", f"33"],
-                       [f"31", f"32", f"1000"]],
-                  index=["1", "2", "3", "4", "5", "6"], columns=["واحد اندازه گیری", "تعداد", "دسته بندی"])
-
-    df.to_excel('data.xlsx', sheet_name='data')
+    df = pd.DataFrame({
+        "واحد اندازه گیری" : [val.value1, val.value2, val.value3, ],
+        "تعداد" : [val.Number1],
+        "دسته بندی" : [val.category1],
+        "نام کالا" : [val.name1]
+    })
+    df.to_excel("data.xlsx", sheet_name="data", index=False)
 
 
-Excel_data()
+# niazi be fujnc zir nist
+def Excel():
+    Excel_data()
+    print("Data Saved In Computer")
