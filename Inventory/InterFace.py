@@ -32,30 +32,30 @@ combo.pack()
 
 
 def Find_Value_func1(event):
+    """show value data"""
     selected_value1 = selected_var1.get()
-    print(selected_value1)
+    data.in_val.append(selected_value1)
     showinfo(
         title='Result',
         message=f'You selected {selected_value1}!'
     )
-    data.value1.append(selected_value1)
+
 
 combo.bind("<<ComboboxSelected>>", Find_Value_func1)
 
 lbl2_upper = ttk.Label(adding_resource_tab1, text="مقدار")
 lbl2_upper.pack()
-
-def value_changed():
-    spin = spin_value.get()
-    data.Number1.append(spin)
-
-
 spin_value = tk.StringVar(value=0)
-spin_box = ttk.Spinbox(adding_resource_tab1, from_=0, to=1000000000000, textvariable=spin_value, wrap=True, command=value_changed)
-spin_box.pack()
 
-btn3 = tk.Button(adding_resource_tab1, text="✔", width=2, height=1, bg="blue", fg="green", command=value_changed)
-btn3.pack()
+
+def value_changed_spin():
+    """show Number data"""
+    spin = spin_value.get()
+    data.in_Num.append(spin)
+
+
+spin_box = ttk.Spinbox(adding_resource_tab1, from_=0, to=1000000000000, textvariable=spin_value, wrap=True, command=value_changed_spin)
+spin_box.pack()
 
 lbl3_upper = ttk.Label(adding_resource_tab1, text="دسته بندی")
 lbl3_upper.pack()
@@ -67,44 +67,64 @@ combo2["state"] = "readonly"
 combo2.pack()
 
 
-def Find_Value_func2(event):
+def Find_cat_func2(event):
+    """show categories"""
     selected_value2 = selected_var2.get()
-
+    data.in_cat.append(selected_value2)
     showinfo(
         title='Result',
         message=f'You selected {selected_value2}!'
     )
 
-    data.category1.append(selected_value2)
 
-
-combo2.bind("<<ComboboxSelected>>", Find_Value_func2)
+combo2.bind("<<ComboboxSelected>>", Find_cat_func2)
 
 lbl4_upper = ttk.Label(adding_resource_tab1, text="نام کالا")
 lbl4_upper.pack()
-
-
-def Find_Value_func3_Entry():
-    Entry = txt1.get()
-    showinfo(
-        title='Result',
-        message=f'You selected {Entry}!'
-    )
-    data.name1.append(Entry)
-
-
 txt1 = ttk.Entry(adding_resource_tab1)
 txt1.pack()
 
-btn1 = tk.Button(adding_resource_tab1, height=1, width=2, text="✔", bg="blue", fg="green", command=Find_Value_func3_Entry)
-btn1.pack()
+
+def Find_Value_func3_Entry():
+    """show Entry var"""
+    Entry = txt1.get()
+    data.in_Name.append(Entry)
 
 
-def data_handeler():
-    data.Excel()
+def caller_func():
+    Find_Value_func3_Entry()
+    value_changed_spin()
+    if (data.in_val or data.in_cat) == []:
+        print(f"data is not correct(user dont select option)")
+        showinfo(
+        title="Result",
+        message="Try again Error101"
+        )
+        return
+    elif data.in_Num == ['0']:
+        print(f"data is not correct(user dont input number)")
+        showinfo(
+        title="Result",
+        message="Try again Error101"
+        )
+        return
+    elif data.in_Name == [0]:
+        print(f"data is not correct(user dont input product name)")
+        showinfo(
+        title="Result",
+        message="Try again Error101"
+        )
+        return
+    else:
+        print("data save in computer")
+        data.data_saving()
+        showinfo(
+            title="Result",
+            message="completed"
+        )
 
 
-btn2 = tk.Button(adding_resource_tab1, height=2, width=10, text="Submit", bg="blue", fg="red", command=data_handeler)
+btn2 = tk.Button(adding_resource_tab1, height=2, width=10, text="Submit", bg="blue", fg="red", command=caller_func)
 btn2.pack()
 
 windows.geometry("500x500")

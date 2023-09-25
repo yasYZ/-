@@ -1,19 +1,29 @@
-import pandas as pd
-import tkinter as tk
-import pd_val_def as val
+import sqlite3
 
-def Excel_data():
-    """Writes current data in Excel"""
-    df = pd.DataFrame({
-        "واحد اندازه گیری" : [val.value1, val.value2, val.value3, ],
-        "تعداد" : [val.Number1],
-        "دسته بندی" : [val.category1],
-        "نام کالا" : [val.name1]
-    })
-    df.to_excel("data.xlsx", sheet_name="data", index=False)
+in_val = []
+in_cat = []
+in_Num = []
+in_Name = []
 
 
-# niazi be fujnc zir nist
-def Excel():
-    Excel_data()
-    print("Data Saved In Computer")
+def data_saving():
+
+    db = sqlite3.connect("data.db")
+    cursor = db.cursor()
+
+    cursor.execute(
+        """CREATE TABLE IF NOT EXISTS data_table(
+            Value TEXT,
+            Category TEXT,
+            Number INTEGER,
+            Name TEXT
+        )"""
+    )
+
+    # insert query
+    cursor.execute(
+        """INSERT INTO data_table(Value, Category, Number, Name) VALUES(?, ?, ?, ?)""", (str(in_val), str(in_cat), str(in_Num), str(in_Name))
+    )
+    db.commit()
+
+    db.close()
