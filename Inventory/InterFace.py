@@ -6,11 +6,12 @@ import data
 windows = tk.Tk()
 
 windows.title("انبار داری یزدان بافت | pxc")
-windows.geometry("1280x720")
+
+# add source tab
 
 Tab_control = ttk.Notebook(windows, width=5, height=1)
 adding_resource_tab1 = ttk.Frame(Tab_control)
-Tab_control.add(adding_resource_tab1, text="adding resources")
+Tab_control.add(adding_resource_tab1, text="اضافه کردن کالا")
 Tab_control.pack(expand=1, fill="both")
 
 lbl = ttk.Label(text="انبار داری یزدان بافت | PXC app")
@@ -54,7 +55,7 @@ def value_changed_spin():
     data.in_Num.append(spin)
 
 
-spin_box = ttk.Spinbox(adding_resource_tab1, from_=0, to=1000000000000, textvariable=spin_value, wrap=True, command=value_changed_spin)
+spin_box = ttk.Spinbox(adding_resource_tab1, from_=0, to=1000000000000, textvariable=spin_value, wrap=True)
 spin_box.pack()
 
 lbl3_upper = ttk.Label(adding_resource_tab1, text="دسته بندی")
@@ -91,9 +92,25 @@ def Find_Value_func3_Entry():
     data.in_Name.append(Entry)
 
 
+def situation():
+    if selected_var2.get() == "انبار کالای تولید شده":
+        data.Situation.append(f" تولید شده{txt1.get()}+{spin_value.get()}")
+        print("situation saved")
+    elif selected_var2.get() == "انبار مواد اولیه":
+        data.Situation.append(f"مواد اولیه (مواد مصرفی){txt1.get()}+{spin_value.get()}")
+        print("situation saved")
+    elif selected_var2.get() == "انبار درجریان ساخت":
+        data.Situation.append(f"قطعه وارد انبار شد{txt1.get()}+{spin_value.get()}")
+        print("situation saved")
+    else:
+        return
+
+
 def caller_func():
+    """check and import data to database"""
     Find_Value_func3_Entry()
     value_changed_spin()
+    situation()
     if (data.in_val or data.in_cat) == []:
         print(f"data is not correct(user dont select option)")
         showinfo(
@@ -105,14 +122,14 @@ def caller_func():
         print(f"data is not correct(user dont input number)")
         showinfo(
         title="Result",
-        message="Try again Error101"
+        message="Try again Error102"
         )
         return
     elif data.in_Name == [0]:
         print(f"data is not correct(user dont input product name)")
         showinfo(
         title="Result",
-        message="Try again Error101"
+        message="Try again Error103"
         )
         return
     else:
@@ -126,6 +143,29 @@ def caller_func():
 
 btn2 = tk.Button(adding_resource_tab1, height=2, width=10, text="Submit", bg="blue", fg="red", command=caller_func)
 btn2.pack()
+
+# export source tab
+
+export_resource_tab2 = ttk.Frame(Tab_control)
+Tab_control.add(export_resource_tab2, text="ترخیص کالا")
+Tab_control.pack(expand=1, fill="both")
+
+
+
+
+
+# change source tab
+
+change_resource_tab2 = ttk.Frame(Tab_control)
+Tab_control.add(change_resource_tab2, text="تغییرات")
+Tab_control.pack(expand=1, fill="both")
+
+
+# show result
+
+show_result_tab2 = ttk.Frame(Tab_control)
+Tab_control.add(show_result_tab2, text="نمایش نتایج")
+Tab_control.pack(expand=1, fill="both")
 
 windows.geometry("500x500")
 windows.mainloop()
