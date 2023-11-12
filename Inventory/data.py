@@ -1,4 +1,5 @@
-import sqlite3
+import psycopg2
+import datetime
 
 in_val = []
 in_cat = []
@@ -7,36 +8,52 @@ in_Name = []
 Situation = []
 Up_Situation = []
 input_id = []
+user_id = []
 
-db = sqlite3.connect("data.db")
-cursor = db.cursor()
-
-cursor.execute(
-    """CREATE TABLE IF NOT EXISTS data_table(
-        Value TEXT,
-        Category TEXT,
-        Number INTEGER,
-        Name TEXT,
-        Situation TEXT
-    )"""
-)
-
-
-def data_saving():
-    """insert query"""
-    cursor.execute(
-        """INSERT INTO data_table(Value, Category, Number, Name, Situation) VALUES(?, ?, ?, ?, ?)""", (str(in_val), str(in_cat), str(in_Num), str(in_Name), str(Situation))
-    )
-    db.commit()
+create_post_table_postgres = """
+CREATE TABLE IF NOT EXISTS data (
+    id  SERIAL PRIMARY KEY,
+    name TEXT NOT NULL,
+    category TEXT NOT NULL ,
+    value TEXT NOT NULL,
+    number INTEGER NOT NULL,
+    situation TEXT NOT NULL,
+    created_at DATE NOT NULL
+);
+"""
 
 
-def update_data():
-    """update query"""
-    cursor.execute(
-        db.execSQL("UPDATE DB_TABLE SET YOUR_COLUMN='newValue' WHERE id=6 ")
-    )
-    db.commit()
-    db.close()
+def create_db_connection(database, user, host, port, password):
+    connection = None
+    try:
+        connection = psycopg2.connect(
+            database=database, user=user, host=host,
+            port=port, password=password
+        )
+        file_obj = open("log/log.txt", "w")
+        file_obj.write(f"""connect to post data base is successfully error[0] by {user_id} user, in {datetime.datetime.today()}""")
+        file_obj.close()
+    except Exception as ex:
+        print(ex)
+        return connection
 
 
-data_saving()
+cursor = psycopg2.cursor()
+
+
+def execute_query(connection, query):
+    cursor = connection.cursor()
+    try:
+        cursor.execute(query)
+        connection.commit()
+        print('query ok')
+    except Exception as ex:
+        print(ex)
+
+
+post_connection = create_db_connection(
+    database='postgres', user='postgres', password='1234qwer',
+    host='localhost', port=5432)
+
+
+execute_query(post_connection, create_post_table_postgres)

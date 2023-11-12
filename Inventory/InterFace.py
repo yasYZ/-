@@ -2,7 +2,7 @@ import tkinter as tk
 from tkinter.messagebox import showinfo
 from tkinter import ttk
 import data
-
+import email_sender
 windows = tk.Tk()
 
 windows.title("انبار داری یزدان بافت | pxc")
@@ -135,6 +135,7 @@ def caller_func():
     else:
         print("data save in computer")
         data.data_saving()
+        email_sender.email_sender()
         showinfo(
             title="Result",
             message="completed"
@@ -150,10 +151,6 @@ export_resource_tab2 = ttk.Frame(Tab_control)
 Tab_control.add(export_resource_tab2, text="ترخیص کالا")
 Tab_control.pack(expand=1, fill="both")
 
-
-
-
-
 # change source tab
 
 change_resource_tab2 = ttk.Frame(Tab_control)
@@ -168,4 +165,5 @@ Tab_control.add(show_result_tab2, text="نمایش نتایج")
 Tab_control.pack(expand=1, fill="both")
 
 windows.geometry("500x500")
+
 windows.mainloop()
