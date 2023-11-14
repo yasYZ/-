@@ -2,7 +2,8 @@ import tkinter as tk
 from tkinter.messagebox import showinfo
 from tkinter import ttk
 import data
-import email_sender
+import email_center
+
 windows = tk.Tk()
 
 windows.title("انبار داری یزدان بافت | pxc")
@@ -16,8 +17,8 @@ Tab_control.pack(expand=1, fill="both")
 
 lbl = ttk.Label(text="انبار داری یزدان بافت | PXC app")
 lbl1 = ttk.Label(text=".  .  .")
-lbl2 = ttk.Label(text="Support in telegram @yasYZ_YZ")
-lbl3 = ttk.Label(text="CopyRight CC by @yasYZ")
+lbl2 = ttk.Label(text="Support in telegram @yasYZ_Dev")
+lbl3 = ttk.Label(text="CopyRight CC by @TopUP")
 lbl.pack(ipadx=10, ipady=10)
 lbl1.pack(ipadx=10, ipady=10)
 lbl2.pack(side="right")
@@ -92,57 +93,61 @@ def Find_Value_func3_Entry():
     data.in_Name.append(Entry)
 
 
-def situation():
-    if selected_var2.get() == "انبار کالای تولید شده":
-        data.Situation.append(f" تولید شده{txt1.get()}+{spin_value.get()}")
-        print("situation saved")
-    elif selected_var2.get() == "انبار مواد اولیه":
-        data.Situation.append(f"مواد اولیه (مواد مصرفی){txt1.get()}+{spin_value.get()}")
-        print("situation saved")
-    elif selected_var2.get() == "انبار درجریان ساخت":
-        data.Situation.append(f"قطعه وارد انبار شد{txt1.get()}+{spin_value.get()}")
-        print("situation saved")
-    else:
-        return
+# def situation():
+#     if selected_var2.get() == "انبار کالای تولید شده":
+#         data.in_Situation.append(f" تولید شده{txt1.get()}+{spin_value.get()}")
+#     elif selected_var2.get() == "انبار مواد اولیه":
+#         data.in_Situation.append(f"مواد اولیه (مواد مصرفی){txt1.get()}+{spin_value.get()}")
+#     elif selected_var2.get() == "انبار درجریان ساخت":
+#         data.in_Situation.append(f"قطعه وارد انبار شد{txt1.get()}+{spin_value.get()}")
+#     else:
+#         return
 
 
 def caller_func():
     """check and import data to database"""
     Find_Value_func3_Entry()
     value_changed_spin()
-    situation()
-    if (data.in_val or data.in_cat) == []:
-        print(f"data is not correct(user dont select option)")
+    if not (data.in_val or data.in_cat):
+        file = open('log/ui_log.txt', 'a')
+        file.write(f'data is not correct(user dont select option)\n')
+        file.close()
         showinfo(
-        title="Result",
-        message="Try again Error101"
+            title="Result",
+            message="Try again Error101"
         )
         return
     elif data.in_Num == ['0']:
-        print(f"data is not correct(user dont input number)")
+        file = open('log/ui_log.txt', 'a')
+        file.write(f'data is not correct(user dont input number)\n')
+        file.close()
         showinfo(
-        title="Result",
-        message="Try again Error102"
+            title="Result",
+            message="Try again Error102"
         )
         return
     elif data.in_Name == [0]:
-        print(f"data is not correct(user dont input product name)")
+        file = open('log/ui_log.txt', 'a')
+        file.write(f'data is not correct(user dont input product name)\n')
+        file.close()
         showinfo(
-        title="Result",
-        message="Try again Error103"
+            title="Result",
+            message="Try again Error103"
         )
         return
     else:
-        print("data save in computer")
+        file = open('log/ui_log.txt', 'a')
+        file.write(f'data save in db)\n')
+        file.close()
+        email_center.email_sender()
         data.data_saving()
-        email_sender.email_sender()
         showinfo(
             title="Result",
             message="completed"
         )
 
 
-btn2 = tk.Button(adding_resource_tab1, height=2, width=10, text="Submit", bg="blue", fg="red", command=caller_func)
+btn2 = tk.Button(adding_resource_tab1, height=2, width=10, text="Submit", bg="blue", fg="white", command=caller_func)
 btn2.pack()
 
 # export source tab
@@ -151,12 +156,12 @@ export_resource_tab2 = ttk.Frame(Tab_control)
 Tab_control.add(export_resource_tab2, text="ترخیص کالا")
 Tab_control.pack(expand=1, fill="both")
 
+
 # change source tab
 
 change_resource_tab2 = ttk.Frame(Tab_control)
 Tab_control.add(change_resource_tab2, text="تغییرات")
 Tab_control.pack(expand=1, fill="both")
-
 
 # show result
 
@@ -165,5 +170,7 @@ Tab_control.add(show_result_tab2, text="نمایش نتایج")
 Tab_control.pack(expand=1, fill="both")
 
 windows.geometry("500x500")
+icon = tk.PhotoImage(file="../yazdan30x30.png")
+windows.iconphoto(False, icon)
 
 windows.mainloop()
