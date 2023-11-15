@@ -1,8 +1,53 @@
-user successfully connect to database 2023-11-14 20:26:31.361168
-data saved 2023-11-14 20:26:51.210591
-user successfully connect to database 2023-11-14 20:29:48.104753
-user successfully connect to database 2023-11-14 20:29:50.897224
-user successfully connect to database 2023-11-14 20:29:53.447848
-user successfully connect to database 2023-11-14 20:30:12.870910
-user successfully connect to database 2023-11-14 20:30:17.146909
-data saved 2023-11-14 20:30:58.802163
+**data dos"nt exist. error 'charmap' codec can't encode characters in position 9-11: character maps to <undefined> in 2023-11-15 23:43:00.389347!
+user successfully connect to database 2023-11-15 23:43:42.528379
+user successfully connect to database 2023-11-15 23:43:46.325316
+**data dos"nt exist. error 'charmap' codec can't encode characters in position 9-11: character maps to <undefined> in 2023-11-15 23:43:47.687499!
+**data dos"nt exist. error 'charmap' codec can't encode characters in position 9-11: character maps to <undefined> in 2023-11-15 23:43:48.170206!
+user successfully connect to database 2023-11-15 23:44:25.068365
+user successfully connect to database 2023-11-15 23:44:29.515351
+**data dos"nt exist. error 'charmap' codec can't encode characters in position 9-11: character maps to <undefined> in 2023-11-15 23:44:30.714234!
+**data dos"nt exist. error 'charmap' codec can't encode characters in position 9-11: character maps to <undefined> in 2023-11-15 23:44:30.875245!
+**data dos"nt exist. error 'charmap' codec can't encode characters in position 9-11: character maps to <undefined> in 2023-11-15 23:44:31.009084!
+**data dos"nt exist. error 'charmap' codec can't encode characters in position 9-11: character maps to <undefined> in 2023-11-15 23:44:59.741588!
+**data dos"nt exist. error 'charmap' codec can't encode characters in position 9-11: character maps to <undefined> in 2023-11-15 23:44:59.956299!
+**data dos"nt exist. error 'charmap' codec can't encode characters in position 9-11: character maps to <undefined> in 2023-11-15 23:45:00.148638!
+**data dos"nt exist. error 'charmap' codec can't encode characters in position 9-11: character maps to <undefined> in 2023-11-15 23:45:00.350774!
+**data dos"nt exist. error 'charmap' codec can't encode characters in position 9-11: character maps to <undefined> in 2023-11-15 23:45:00.543408!
+**data dos"nt exist. error 'charmap' codec can't encode characters in position 9-11: character maps to <undefined> in 2023-11-15 23:45:00.734898!
+**data dos"nt exist. error 'charmap' codec can't encode characters in position 9-11: character maps to <undefined> in 2023-11-15 23:45:00.941038!
+**data dos"nt exist. error 'charmap' codec can't encode characters in position 9-11: character maps to <undefined> in 2023-11-15 23:45:01.148831!
+**data dos"nt exist. error 'charmap' codec can't encode characters in position 9-11: character maps to <undefined> in 2023-11-15 23:45:01.348416!
+**data dos"nt exist. error 'charmap' codec can't encode characters in position 9-11: character maps to <undefined> in 2023-11-15 23:45:01.762064!
+**data dos"nt exist. error 'charmap' codec can't encode characters in position 9-11: character maps to <undefined> in 2023-11-15 23:45:01.946382!
+**data dos"nt exist. error 'charmap' codec can't encode characters in position 9-11: character maps to <undefined> in 2023-11-15 23:45:02.115731!
+**data dos"nt exist. error 'charmap' codec can't encode characters in position 9-11: character maps to <undefined> in 2023-11-15 23:45:02.237635!
+**data dos"nt exist. error 'charmap' codec can't encode characters in position 9-11: character maps to <undefined> in 2023-11-15 23:45:02.361909!
+**data dos"nt exist. error 'charmap' codec can't encode characters in position 9-11: character maps to <undefined> in 2023-11-15 23:45:02.486967!
+**data dos"nt exist. error 'charmap' codec can't encode characters in position 9-11: character maps to <undefined> in 2023-11-15 23:45:02.622243!
+**data dos"nt exist. error 'charmap' codec can't encode characters in position 9-11: character maps to <undefined> in 2023-11-15 23:45:02.840936!
+**data dos"nt exist. error 'charmap' codec can't encode characters in position 9-11: character maps to <undefined> in 2023-11-15 23:45:02.952050!
+user successfully connect to database 2023-11-15 23:45:55.994568
+user successfully connect to database 2023-11-15 23:46:02.093653
+**data dos"nt exist. error 'charmap' codec can't encode characters in position 9-11: character maps to <undefined> in 2023-11-15 23:46:03.781423!
+user successfully connect to database 2023-11-15 23:47:20.171777
+data saved 2023-11-15 23:47:45.127182
+**data dos"nt exist. error 'charmap' codec can't encode character '\u067e' in position 10: character maps to <undefined> in 2023-11-15 23:48:41.555852!
+user successfully connect to database 2023-11-15 23:50:16.814032
+**data dos"nt exist. error 'charmap' codec can't encode character '\u067e' in position 10: character maps to <undefined> in 2023-11-15 23:50:18.466813!
+**data dos"nt exist. error 'charmap' codec can't encode character '\u067e' in position 10: character maps to <undefined> in 2023-11-15 23:50:19.235576!
+**data dos"nt exist. error 'charmap' codec can't encode character '\u067e' in position 10: character maps to <undefined> in 2023-11-15 23:50:19.426867!
+**data dos"nt exist. error 'charmap' codec can't encode character '\u067e' in position 10: character maps to <undefined> in 2023-11-15 23:50:19.615725!
+**data dos"nt exist. error 'charmap' codec can't encode character '\u067e' in position 10: character maps to <undefined> in 2023-11-15 23:50:19.801981!
+**data dos"nt exist. error 'charmap' codec can't encode character '\u067e' in position 10: character maps to <undefined> in 2023-11-15 23:50:20.017035!
+**data dos"nt exist. error 'charmap' codec can't encode character '\u067e' in position 10: character maps to <undefined> in 2023-11-15 23:50:20.195145!
+**data dos"nt exist. error 'charmap' codec can't encode character '\u067e' in position 10: character maps to <undefined> in 2023-11-15 23:50:20.369807!
+**data dos"nt exist. error 'charmap' codec can't encode character '\u067e' in position 10: character maps to <undefined> in 2023-11-15 23:50:20.547310!
+data saved 2023-11-15 23:51:04.563065
+**data dos"nt exist. error 'charmap' codec can't encode character '\u067e' in position 10: character maps to <undefined> in 2023-11-15 23:51:07.441588!
+**data dos"nt exist. error 'charmap' codec can't encode character '\u067e' in position 10: character maps to <undefined> in 2023-11-15 23:51:11.068660!
+user successfully connect to database 2023-11-15 23:52:35.794974
+user successfully connect to database 2023-11-15 23:52:41.618066
+user successfully connect to database 2023-11-15 23:53:10.529856
+user successfully connect to database 2023-11-15 23:55:21.092656
+user successfully connect to database 2023-11-15 23:56:00.743069
+user successfully connect to database 2023-11-15 23:58:54.556960

@@ -81,7 +81,7 @@ def Find_cat_func2(event):
 
 combo2.bind("<<ComboboxSelected>>", Find_cat_func2)
 
-lbl4_upper = ttk.Label(adding_resource_tab1, text="نام کالا")
+lbl4_upper = ttk.Label(adding_resource_tab1, text="مشخصات کالا")
 lbl4_upper.pack()
 txt1 = ttk.Entry(adding_resource_tab1)
 txt1.pack()
@@ -91,6 +91,18 @@ def Find_Value_func3_Entry():
     """show Entry var"""
     Entry = txt1.get()
     data.in_Name.append(Entry)
+
+
+lbl5_upper = ttk.Label(adding_resource_tab1, text="فرستنده")
+lbl5_upper.pack()
+txt2 = ttk.Entry(adding_resource_tab1)
+txt2.pack()
+
+
+def find_sender():
+    """show Entry var"""
+    entry = txt2.get()
+    data.in_sender.append(entry)
 
 
 # def situation():
@@ -108,6 +120,7 @@ def caller_func():
     """check and import data to database"""
     Find_Value_func3_Entry()
     value_changed_spin()
+    find_sender()
     if not (data.in_val or data.in_cat):
         file = open('log/ui_log.txt', 'a')
         file.write(f'data is not correct(user dont select option)\n')
@@ -117,7 +130,7 @@ def caller_func():
             message="Try again Error101"
         )
         return
-    elif data.in_Num == ['0']:
+    elif data.in_Num == [0]:
         file = open('log/ui_log.txt', 'a')
         file.write(f'data is not correct(user dont input number)\n')
         file.close()
@@ -135,10 +148,24 @@ def caller_func():
             message="Try again Error103"
         )
         return
+    elif data.in_sender == [0]:
+        file = open('log/ui_log.txt', 'a')
+        file.write(f'data is not correct(user dont input sender name)\n')
+        file.close()
+        showinfo(
+            title="Result",
+            message="Try again Error104"
+        )
+        return
     else:
         file = open('log/ui_log.txt', 'a')
-        file.write(f'data save in db)\n')
+        file.write(f'data save in db\n')
         file.close()
+        combo.set("")
+        combo2.set("")
+        spin_box.delete(0, tk.END)
+        txt1.delete(0, tk.END)
+        txt2.delete(0, tk.END)
         email_center.email_sender()
         data.data_saving()
         showinfo(
@@ -156,6 +183,36 @@ export_resource_tab2 = ttk.Frame(Tab_control)
 Tab_control.add(export_resource_tab2, text="ترخیص کالا")
 Tab_control.pack(expand=1, fill="both")
 
+
+selected_var4 = tk.StringVar()
+lbl6 = tk.Label
+combo3 = ttk.Combobox(export_resource_tab2, width=17, height=1, textvariable=selected_var4)
+combo3["values"] = "همه"
+combo3.set("همه")
+combo3.pack()
+
+
+def show_value(event):
+    """show value data"""
+    selected_value4 = selected_var4.get()
+    showinfo(
+        title='Result',
+        message=f'You selected {selected_value4}!'
+    )
+
+
+def value():
+    data.show_all_values()
+    for item in data.show_all_val:
+        show_item = tk.Entry(export_resource_tab2, width=25)
+        show_item.insert(tk.END, f"{item}")
+        show_item.configure(state="readonly")
+        show_item.pack()
+
+
+btn3 = tk.Button(export_resource_tab2, height=2, width=10, text="Submit", bg="blue", fg="white", command=value)
+btn3.pack()
+combo3.bind("<<ComboboxSelected>>", show_value)
 
 # change source tab
 
