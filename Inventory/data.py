@@ -102,10 +102,7 @@ def show_all_values():
         cursor.execute(f"SELECT name FROM data")
         records = cursor.fetchall()
         print(records)
-        show_all_val.append(records)
-        # file1 = open('log/db_log.txt', 'a')
-        # file1.write(f'data {records} was found {datetime.datetime.today()}\n')
-        # file1.close()
+        show_all_val.append(f"{records}")
     except Exception as ex:
         file0 = open('log/db_log.txt', 'a')
         file0.write(f'**data dos"nt exist. error {ex} in {datetime.datetime.today()}!\n')

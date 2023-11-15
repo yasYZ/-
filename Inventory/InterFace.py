@@ -201,11 +201,13 @@ def show_value(event):
     )
 
 
+data.show_all_values()
+
+
 def value():
-    data.show_all_values()
     for item in data.show_all_val:
         show_item = tk.Entry(export_resource_tab2, width=25)
-        show_item.insert(tk.END, f"{item}")
+        show_item.insert(tk.END, f"{item[0]}")
         show_item.configure(state="readonly")
         show_item.pack()
 
