@@ -101,8 +101,8 @@ def show_all_values():
     try:
         cursor.execute(f"SELECT name FROM data")
         records = cursor.fetchall()
-        print(records)
-        show_all_val.append(f"{records}")
+        for item in records:
+            show_all_val.append(item)
     except Exception as ex:
         file0 = open('log/db_log.txt', 'a')
         file0.write(f'**data dos"nt exist. error {ex} in {datetime.datetime.today()}!\n')

@@ -201,15 +201,19 @@ def show_value(event):
     )
 
 
-data.show_all_values()
-
-
 def value():
+    """write export source data on ui page"""
+    data.show_all_values()
     for item in data.show_all_val:
         show_item = tk.Entry(export_resource_tab2, width=25)
-        show_item.insert(tk.END, f"{item[0]}")
-        show_item.configure(state="readonly")
         show_item.pack()
+# value_without_braces = item[0].replace("{", "").replace("}", "") # if we want a data without {} and now its broken
+        show_item.insert(tk.END, item[0])
+        show_item.configure(state="readonly")
+        data.del_all_showed_data()
+        # for item1 in item:
+        #     detail_btn = tk.Button(export_resource_tab2, text="salam")
+        #     detail_btn.pack()
 
 
 btn3 = tk.Button(export_resource_tab2, height=2, width=10, text="Submit", bg="blue", fg="white", command=value)
