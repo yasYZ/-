@@ -2,6 +2,7 @@ import tkinter as tk
 from tkinter.messagebox import showinfo
 from tkinter import ttk
 import data
+import export_source
 import email_center
 
 windows = tk.Tk()
@@ -19,6 +20,7 @@ lbl = ttk.Label(text="انبار داری یزدان بافت | PXC app")
 lbl1 = ttk.Label(text=".  .  .")
 lbl2 = ttk.Label(text="Support in telegram @yasYZ_Dev")
 lbl3 = ttk.Label(text="CopyRight CC by @TopUP")
+lbl4 = ttk.Label(text="V1.0.0.83")
 lbl.pack(ipadx=10, ipady=10)
 lbl1.pack(ipadx=10, ipady=10)
 lbl2.pack(side="right")
@@ -180,60 +182,110 @@ btn2.pack()
 # export source tab
 
 export_resource_tab2 = ttk.Frame(Tab_control)
-Tab_control.add(export_resource_tab2, text="ترخیص کالا")
+Tab_control.add(export_resource_tab2, text="ترخیص کالا/نمایش نتایج")
 Tab_control.pack(expand=1, fill="both")
 
 
 selected_var4 = tk.StringVar()
 lbl6 = tk.Label
 combo3 = ttk.Combobox(export_resource_tab2, width=17, height=1, textvariable=selected_var4)
-combo3["values"] = "همه"
+combo3["values"] = "همه", "جستجو"
 combo3.set("همه")
 combo3.pack()
+
+index1 = [0]
+
+
+def find_search_box_val():
+    """show Entry var"""
+    lbl10 = tk.Label(export_resource_tab2, text="search")
+    lbl10.pack()
+    search_box = tk.Entry(export_resource_tab2)
+    search_box.pack()
+
+    def search():
+        entry = search_box.get()
+        data.show_data.append(entry)
+        data.data_show()
+        for i, row in enumerate(data.data_show_var):
+            _, name, *_ = row
+            create_button(i + 1, name)
+        index1.remove(0)
+        index1.append(1)
+        # else:
+        #     file = open('log/ui_log.txt', 'a')
+        #     file.write(f'**user dont change topic()!\n')
+        #     file.close()
+    btn4 = tk.Button(export_resource_tab2, text="جستجو", bg="blue", fg="white", command=search)
+    btn4.pack()
 
 
 def show_value(event):
     """show value data"""
     selected_value4 = selected_var4.get()
+
+    if selected_value4 == 'جستجو':
+        try:
+            find_search_box_val()
+            index1.remove(1)
+            index1.append(0)
+        except ValueError as ex:
+            print(f"selected {selected_value4}")
+    elif selected_value4 == 'همه':
+        try:
+            submit()
+            index1.remove(1)
+            index1.append(0)
+        except ValueError as ex:
+            print(f"selected {selected_value4}")
+
     showinfo(
         title='Result',
         message=f'You selected {selected_value4}!'
     )
 
 
-def value():
-    """write export source data on ui page"""
-    data.show_all_values()
-    for item in data.show_all_val:
-        show_item = tk.Entry(export_resource_tab2, width=25)
-        show_item.pack()
-# value_without_braces = item[0].replace("{", "").replace("}", "") # if we want a data without {} and now its broken
-        show_item.insert(tk.END, item[0])
-        show_item.configure(state="readonly")
-        data.del_all_showed_data()
-        # for item1 in item:
-        #     detail_btn = tk.Button(export_resource_tab2, text="salam")
-        #     detail_btn.pack()
-
-
-btn3 = tk.Button(export_resource_tab2, height=2, width=10, text="Submit", bg="blue", fg="white", command=value)
-btn3.pack()
 combo3.bind("<<ComboboxSelected>>", show_value)
 
+
+def value():
+    """write export source data on ui page"""
+    data.del_all_showed_data()
+    if index1 == [0]:
+        data.select_row()
+        for i, row in enumerate(data.row_data):
+            _, name, *_ = row
+            create_button(i + 1, name)
+        index1.remove(0)
+        index1.append(1)
+    else:
+        file = open('log/ui_log.txt', 'a')
+        file.write(f'**user dont change topic()!\n')
+        file.close()
+
+
+def create_button(index, name):
+    detail_button = tk.Button(export_resource_tab2, width=55, text=f" ترخیص کالا/نمایش نتایج/ {name} (ردیف کالا{index})", fg="blue", bg="white", command=lambda: export_source.export_tab(index-1))
+    detail_button.pack()
+
+
+def submit():
+    btn3 = tk.Button(export_resource_tab2, height=2, width=10, text="Submit", bg="blue", fg="white", command=value)
+    btn3.pack()
+
+# coming soon for 2.0V...
 # change source tab
 
-change_resource_tab2 = ttk.Frame(Tab_control)
-Tab_control.add(change_resource_tab2, text="تغییرات")
-Tab_control.pack(expand=1, fill="both")
+# change_resource_tab2 = ttk.Frame(Tab_control)
+# Tab_control.add(change_resource_tab2, text="تغییرات")
+# Tab_control.pack(expand=1, fill="both")
 
 # show result
 
-show_result_tab2 = ttk.Frame(Tab_control)
-Tab_control.add(show_result_tab2, text="نمایش نتایج")
-Tab_control.pack(expand=1, fill="both")
+# show_result_tab2 = ttk.Frame(Tab_control)
+# Tab_control.add(show_result_tab2, text="نمایش نتایج")
+# Tab_control.pack(expand=1, fill="both")
 
 windows.geometry("500x500")
-icon = tk.PhotoImage(file="../yazdan30x30.png")
-windows.iconphoto(False, icon)
 
 windows.mainloop()

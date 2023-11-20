@@ -1,121 +1,66 @@
-**data dos"nt exist. error 'charmap' codec can't encode characters in position 9-11: character maps to <undefined> in 2023-11-15 23:43:00.389347!
-user successfully connect to database 2023-11-15 23:43:42.528379
-user successfully connect to database 2023-11-15 23:43:46.325316
-**data dos"nt exist. error 'charmap' codec can't encode characters in position 9-11: character maps to <undefined> in 2023-11-15 23:43:47.687499!
-**data dos"nt exist. error 'charmap' codec can't encode characters in position 9-11: character maps to <undefined> in 2023-11-15 23:43:48.170206!
-user successfully connect to database 2023-11-15 23:44:25.068365
-user successfully connect to database 2023-11-15 23:44:29.515351
-**data dos"nt exist. error 'charmap' codec can't encode characters in position 9-11: character maps to <undefined> in 2023-11-15 23:44:30.714234!
-**data dos"nt exist. error 'charmap' codec can't encode characters in position 9-11: character maps to <undefined> in 2023-11-15 23:44:30.875245!
-**data dos"nt exist. error 'charmap' codec can't encode characters in position 9-11: character maps to <undefined> in 2023-11-15 23:44:31.009084!
-**data dos"nt exist. error 'charmap' codec can't encode characters in position 9-11: character maps to <undefined> in 2023-11-15 23:44:59.741588!
-**data dos"nt exist. error 'charmap' codec can't encode characters in position 9-11: character maps to <undefined> in 2023-11-15 23:44:59.956299!
-**data dos"nt exist. error 'charmap' codec can't encode characters in position 9-11: character maps to <undefined> in 2023-11-15 23:45:00.148638!
-**data dos"nt exist. error 'charmap' codec can't encode characters in position 9-11: character maps to <undefined> in 2023-11-15 23:45:00.350774!
-**data dos"nt exist. error 'charmap' codec can't encode characters in position 9-11: character maps to <undefined> in 2023-11-15 23:45:00.543408!
-**data dos"nt exist. error 'charmap' codec can't encode characters in position 9-11: character maps to <undefined> in 2023-11-15 23:45:00.734898!
-**data dos"nt exist. error 'charmap' codec can't encode characters in position 9-11: character maps to <undefined> in 2023-11-15 23:45:00.941038!
-**data dos"nt exist. error 'charmap' codec can't encode characters in position 9-11: character maps to <undefined> in 2023-11-15 23:45:01.148831!
-**data dos"nt exist. error 'charmap' codec can't encode characters in position 9-11: character maps to <undefined> in 2023-11-15 23:45:01.348416!
-**data dos"nt exist. error 'charmap' codec can't encode characters in position 9-11: character maps to <undefined> in 2023-11-15 23:45:01.762064!
-**data dos"nt exist. error 'charmap' codec can't encode characters in position 9-11: character maps to <undefined> in 2023-11-15 23:45:01.946382!
-**data dos"nt exist. error 'charmap' codec can't encode characters in position 9-11: character maps to <undefined> in 2023-11-15 23:45:02.115731!
-**data dos"nt exist. error 'charmap' codec can't encode characters in position 9-11: character maps to <undefined> in 2023-11-15 23:45:02.237635!
-**data dos"nt exist. error 'charmap' codec can't encode characters in position 9-11: character maps to <undefined> in 2023-11-15 23:45:02.361909!
-**data dos"nt exist. error 'charmap' codec can't encode characters in position 9-11: character maps to <undefined> in 2023-11-15 23:45:02.486967!
-**data dos"nt exist. error 'charmap' codec can't encode characters in position 9-11: character maps to <undefined> in 2023-11-15 23:45:02.622243!
-**data dos"nt exist. error 'charmap' codec can't encode characters in position 9-11: character maps to <undefined> in 2023-11-15 23:45:02.840936!
-**data dos"nt exist. error 'charmap' codec can't encode characters in position 9-11: character maps to <undefined> in 2023-11-15 23:45:02.952050!
-user successfully connect to database 2023-11-15 23:45:55.994568
-user successfully connect to database 2023-11-15 23:46:02.093653
-**data dos"nt exist. error 'charmap' codec can't encode characters in position 9-11: character maps to <undefined> in 2023-11-15 23:46:03.781423!
-user successfully connect to database 2023-11-15 23:47:20.171777
-data saved 2023-11-15 23:47:45.127182
-**data dos"nt exist. error 'charmap' codec can't encode character '\u067e' in position 10: character maps to <undefined> in 2023-11-15 23:48:41.555852!
-user successfully connect to database 2023-11-15 23:50:16.814032
-**data dos"nt exist. error 'charmap' codec can't encode character '\u067e' in position 10: character maps to <undefined> in 2023-11-15 23:50:18.466813!
-**data dos"nt exist. error 'charmap' codec can't encode character '\u067e' in position 10: character maps to <undefined> in 2023-11-15 23:50:19.235576!
-**data dos"nt exist. error 'charmap' codec can't encode character '\u067e' in position 10: character maps to <undefined> in 2023-11-15 23:50:19.426867!
-**data dos"nt exist. error 'charmap' codec can't encode character '\u067e' in position 10: character maps to <undefined> in 2023-11-15 23:50:19.615725!
-**data dos"nt exist. error 'charmap' codec can't encode character '\u067e' in position 10: character maps to <undefined> in 2023-11-15 23:50:19.801981!
-**data dos"nt exist. error 'charmap' codec can't encode character '\u067e' in position 10: character maps to <undefined> in 2023-11-15 23:50:20.017035!
-**data dos"nt exist. error 'charmap' codec can't encode character '\u067e' in position 10: character maps to <undefined> in 2023-11-15 23:50:20.195145!
-**data dos"nt exist. error 'charmap' codec can't encode character '\u067e' in position 10: character maps to <undefined> in 2023-11-15 23:50:20.369807!
-**data dos"nt exist. error 'charmap' codec can't encode character '\u067e' in position 10: character maps to <undefined> in 2023-11-15 23:50:20.547310!
-data saved 2023-11-15 23:51:04.563065
-**data dos"nt exist. error 'charmap' codec can't encode character '\u067e' in position 10: character maps to <undefined> in 2023-11-15 23:51:07.441588!
-**data dos"nt exist. error 'charmap' codec can't encode character '\u067e' in position 10: character maps to <undefined> in 2023-11-15 23:51:11.068660!
-user successfully connect to database 2023-11-15 23:52:35.794974
-user successfully connect to database 2023-11-15 23:52:41.618066
-user successfully connect to database 2023-11-15 23:53:10.529856
-user successfully connect to database 2023-11-15 23:55:21.092656
-user successfully connect to database 2023-11-15 23:56:00.743069
-user successfully connect to database 2023-11-15 23:58:54.556960
-user successfully connect to database 2023-11-15 23:59:58.567677
-user successfully connect to database 2023-11-16 00:00:02.689203
-user successfully connect to database 2023-11-16 00:01:28.582718
-user successfully connect to database 2023-11-16 00:01:36.821720
-user successfully connect to database 2023-11-16 00:03:23.286113
-user successfully connect to database 2023-11-16 00:04:30.073995
-user successfully connect to database 2023-11-16 00:04:34.789682
-user successfully connect to database 2023-11-16 00:05:37.555271
-user successfully connect to database 2023-11-16 00:09:01.871591
-user successfully connect to database 2023-11-16 22:32:04.105563
-user successfully connect to database 2023-11-17 19:17:59.047430
-user successfully connect to database 2023-11-17 19:19:03.829610
-data saved 2023-11-17 19:19:57.052217
-user successfully connect to database 2023-11-17 19:20:15.196110
-user successfully connect to database 2023-11-17 19:21:34.727734
-user successfully connect to database 2023-11-17 19:21:55.407686
-user successfully connect to database 2023-11-17 19:22:20.805446
-user successfully connect to database 2023-11-17 19:37:53.641980
-user successfully connect to database 2023-11-17 19:38:58.330014
-data saved 2023-11-17 19:44:11.811582
-user successfully connect to database 2023-11-17 19:44:23.409861
-user successfully connect to database 2023-11-17 19:46:35.908233
-user successfully connect to database 2023-11-17 19:46:46.141269
-user successfully connect to database 2023-11-17 19:48:31.919876
-user successfully connect to database 2023-11-17 19:49:07.414057
-user successfully connect to database 2023-11-17 19:49:39.183001
-user successfully connect to database 2023-11-17 19:52:49.661629
-user successfully connect to database 2023-11-17 19:53:29.101419
-user successfully connect to database 2023-11-17 19:54:04.129759
-user successfully connect to database 2023-11-17 19:54:53.765927
-user successfully connect to database 2023-11-17 19:55:12.479479
-user successfully connect to database 2023-11-17 19:56:15.377940
-user successfully connect to database 2023-11-17 19:56:57.316840
-user successfully connect to database 2023-11-17 19:57:11.405982
-user successfully connect to database 2023-11-17 19:57:48.745197
-user successfully connect to database 2023-11-17 19:58:31.172261
-user successfully connect to database 2023-11-17 19:59:51.052210
-user successfully connect to database 2023-11-17 20:02:40.308479
-user successfully connect to database 2023-11-17 20:03:50.198542
-user successfully connect to database 2023-11-17 20:07:09.832374
-user successfully connect to database 2023-11-17 20:07:39.717082
-user successfully connect to database 2023-11-17 20:10:24.575780
-user successfully connect to database 2023-11-17 20:10:44.894756
-user successfully connect to database 2023-11-17 20:13:23.306928
-user successfully connect to database 2023-11-17 20:14:23.784512
-user successfully connect to database 2023-11-17 20:14:45.302989
-user successfully connect to database 2023-11-17 20:34:29.007249
-user successfully connect to database 2023-11-17 20:38:01.613723
-user successfully connect to database 2023-11-17 20:38:56.822710
-user successfully connect to database 2023-11-17 20:39:17.447569
-user successfully connect to database 2023-11-17 20:39:58.041757
-user successfully connect to database 2023-11-17 20:40:27.873343
-user successfully connect to database 2023-11-17 20:40:39.624374
-user successfully connect to database 2023-11-17 20:40:56.299970
-user successfully connect to database 2023-11-17 20:41:22.518506
-user successfully connect to database 2023-11-17 20:41:54.038075
-user successfully connect to database 2023-11-17 20:42:16.587059
-user successfully connect to database 2023-11-17 20:42:34.272338
-user successfully connect to database 2023-11-17 20:42:48.111007
-user successfully connect to database 2023-11-17 20:43:10.338872
-user successfully connect to database 2023-11-17 20:43:28.608974
-user successfully connect to database 2023-11-17 20:43:57.236857
-user successfully connect to database 2023-11-17 20:44:13.370112
-user successfully connect to database 2023-11-17 20:44:27.973064
-user successfully connect to database 2023-11-17 20:45:01.116378
-user successfully connect to database 2023-11-17 20:46:27.535786
-user successfully connect to database 2023-11-17 20:46:56.217050
-user successfully connect to database 2023-11-17 20:47:26.022676
+user successfully connect to database 2023-11-19 18:08:40.257495
+user successfully connect to database 2023-11-19 18:09:15.905823
+user successfully connect to database 2023-11-19 18:15:24.318234
+user successfully connect to database 2023-11-19 18:16:07.013979
+user successfully connect to database 2023-11-19 18:16:18.172050
+user successfully connect to database 2023-11-19 18:17:05.725406
+user successfully connect to database 2023-11-19 18:17:57.141891
+user successfully connect to database 2023-11-19 18:18:16.474003
+user successfully connect to database 2023-11-19 18:21:40.521887
+user successfully connect to database 2023-11-19 18:32:59.286651
+**data dos"nt exist. error argument of OR must be type boolean, not type text
+LINE 1: SELECT name OR id FROM data WHERE data.name OR data.id LIKE ...
+               ^
+ in 2023-11-19 18:33:01.856524!
+user successfully connect to database 2023-11-19 18:34:02.092864
+**data dos"nt exist. error argument of OR must be type boolean, not type text
+LINE 1: SELECT name OR id FROM data WHERE data.name OR data.id LIKE ...
+               ^
+ in 2023-11-19 18:34:04.735512!
+user successfully connect to database 2023-11-19 18:55:54.712940
+user successfully connect to database 2023-11-19 18:56:01.050563
+user successfully connect to database 2023-11-19 18:56:53.603290
+user successfully connect to database 2023-11-19 18:57:22.244091
+user successfully connect to database 2023-11-19 18:57:38.117935
+user successfully connect to database 2023-11-19 18:58:50.558871
+user successfully connect to database 2023-11-19 18:59:37.748575
+user successfully connect to database 2023-11-19 19:00:23.322177
+user successfully connect to database 2023-11-19 19:09:57.383165
+user successfully connect to database 2023-11-19 19:11:04.982839
+user successfully connect to database 2023-11-19 19:11:08.131918
+user successfully connect to database 2023-11-19 19:11:55.914429
+user successfully connect to database 2023-11-19 19:20:47.613419
+user successfully connect to database 2023-11-19 19:21:49.364893
+user successfully connect to database 2023-11-19 19:22:51.279788
+user successfully connect to database 2023-11-19 19:24:02.125762
+user successfully connect to database 2023-11-19 19:25:02.687159
+user successfully connect to database 2023-11-19 19:29:25.304319
+user successfully connect to database 2023-11-19 19:31:42.780837
+user successfully connect to database 2023-11-19 19:32:03.741175
+user successfully connect to database 2023-11-19 19:35:06.905033
+user successfully connect to database 2023-11-19 19:37:50.650012
+user successfully connect to database 2023-11-19 19:39:25.840908
+user successfully connect to database 2023-11-19 19:40:38.483287
+user successfully connect to database 2023-11-19 19:41:45.694713
+user successfully connect to database 2023-11-19 19:43:10.804498
+user successfully connect to database 2023-11-19 19:44:13.660655
+user successfully connect to database 2023-11-19 19:46:00.234251
+user successfully connect to database 2023-11-19 19:46:37.503587
+user successfully connect to database 2023-11-19 19:48:29.757862
+user successfully connect to database 2023-11-19 19:49:51.524770
+user successfully connect to database 2023-11-19 19:50:10.962180
+user successfully connect to database 2023-11-19 19:50:55.004699
+user successfully connect to database 2023-11-19 19:56:51.027328
+user successfully connect to database 2023-11-19 19:56:53.650545
+user successfully connect to database 2023-11-19 20:02:12.659043
+user successfully connect to database 2023-11-19 20:02:44.854749
+user successfully connect to database 2023-11-19 20:05:38.194711
+user successfully connect to database 2023-11-19 20:06:49.966604
+user successfully connect to database 2023-11-19 20:07:43.242647
+user successfully connect to database 2023-11-20 14:57:13.907896
+user successfully connect to database 2023-11-20 14:59:21.717657
+user successfully connect to database 2023-11-20 14:59:41.623547
+user successfully connect to database 2023-11-20 15:02:15.690314
+user successfully connect to database 2023-11-20 15:02:19.180799
+user successfully connect to database 2023-11-20 15:07:56.657239
+user successfully connect to database 2023-11-20 15:08:28.359823

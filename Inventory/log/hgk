@@ -1,9 +1,0 @@
-f"""
-جناب محمد یزدانی عارف!
-
-اضافه شد {datetime.datetime.today()} در تاریخ {data.in_cat} به انبار {data.in_Num} به تعداد {data.in_Name} محصول
-
-**_______________________________________________________________________________**
-this message for YazdanBaft Inventory application
-CopyRighted by YazdanBaft
-"""
