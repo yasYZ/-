@@ -168,7 +168,7 @@ def caller_func():
         spin_box.delete(0, tk.END)
         txt1.delete(0, tk.END)
         txt2.delete(0, tk.END)
-        email_center.email_sender()
+        email_center.email_input_sender(name=data.in_Name, number=data.in_Num, category=data.in_cat)
         data.data_saving()
         showinfo(
             title="Result",
@@ -207,15 +207,16 @@ def find_search_box_val():
         entry = search_box.get()
         data.show_data.append(entry)
         data.data_show()
-        for i, row in enumerate(data.data_show_var):
-            _, name, *_ = row
-            create_button(i + 1, name)
-        index1.remove(0)
-        index1.append(1)
-        # else:
-        #     file = open('log/ui_log.txt', 'a')
-        #     file.write(f'**user dont change topic()!\n')
-        #     file.close()
+        if index1 == [0]:
+            for i, row in enumerate(data.data_show_var):
+                _, name, *_ = row
+                create_button_search(i + 1, name)
+            index1.remove(0)
+            index1.append(1)
+        else:
+            file = open('log/ui_log.txt', 'a')
+            file.write(f'**user dont change topic()!\n')
+            file.close()
     btn4 = tk.Button(export_resource_tab2, text="جستجو", bg="blue", fg="white", command=search)
     btn4.pack()
 
@@ -223,9 +224,11 @@ def find_search_box_val():
 def show_value(event):
     """show value data"""
     selected_value4 = selected_var4.get()
+    data.del_all_showed_data()
 
     if selected_value4 == 'جستجو':
         try:
+            data.__search_del__()
             find_search_box_val()
             index1.remove(1)
             index1.append(0)
@@ -266,6 +269,11 @@ def value():
 
 def create_button(index, name):
     detail_button = tk.Button(export_resource_tab2, width=55, text=f" ترخیص کالا/نمایش نتایج/ {name} (ردیف کالا{index})", fg="blue", bg="white", command=lambda: export_source.export_tab(index-1))
+    detail_button.pack()
+
+
+def create_button_search(index, name):
+    detail_button = tk.Button(export_resource_tab2, width=55, text=f" ترخیص کالا/نمایش نتایج/ {name} (ردیف کالا{index})", fg="blue", bg="white", command=lambda: export_source.export_tab_search(index-1, name))
     detail_button.pack()
 
 

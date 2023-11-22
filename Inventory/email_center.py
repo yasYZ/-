@@ -1,28 +1,62 @@
 import smtplib
 import datetime
-import data
 from email.message import EmailMessage
 
-email = EmailMessage()
-email['from'] = 'YazdanBaft.co@gmail.com'
-email['to'] = 'yasinyazdani71@gmail.com'
-email['subject'] = 'Learn Development for FREE!'
 
-email.set_content(f"""
+def email_input_sender(name, number, category):
+    """send a email with detail for input items"""
+    port = 587  # For SSL
+    smtp_server = "smtp.gmail.com"
+    sender_email = "yazdanbaft.co@gmail.com"  # Enter your address
+    receiver_email = "yasinyazdani71@gmail.com"  # Enter receiver address
+    password = "xswrjyiydermfyji"
+
+    message = EmailMessage()
+    message.set_content(f"""
+    جناب محمد یزدانی عارف!
+    
+    محصول {name} به تعداد {number} به انبار {category} در تاریخ {datetime.datetime.today()}اضافه شد
+    
+    **_______________________________________________________________________________**
+    this message for YazdanBaft Inventory application
+    CopyRighted by YazdanBaft
+    """)
+    message['Subject'] = 'Subject of your email'
+    message['From'] = sender_email
+    message['To'] = receiver_email
+
+    with smtplib.SMTP(host=smtp_server, port=port) as server:
+        server.ehlo()
+        server.starttls()
+        server.login(sender_email, password)
+        server.send_message(message)
+        print('Email was sent!')
+
+
+def email_export_sender(name, number):
+    """send a email with detail for export items"""
+    port = 587  # For SSL
+    smtp_server = "smtp.gmail.com"
+    sender_email = "yazdanbaft.co@gmail.com"  # Enter your address
+    receiver_email = "yasinyazdani71@gmail.com"  # Enter receiver address
+    password = "xswrjyiydermfyji"
+
+    message = EmailMessage()
+    message.set_content(f"""
 جناب محمد یزدانی عارف!
-
-اضافه شد {datetime.datetime.today()} در تاریخ {data.in_cat} به انبار {data.in_Num} به تعداد {data.in_Name} محصول
-
+    
+محصول {name} به تعداد {number} در تاریخ {datetime.datetime.today()} خارج شد    
 **_______________________________________________________________________________**
 this message for YazdanBaft Inventory application
 CopyRighted by YazdanBaft
 """)
+    message['Subject'] = 'Subject of your email'
+    message['From'] = sender_email
+    message['To'] = receiver_email
 
-
-def email_sender():
-    with smtplib.SMTP(host='smtp.gmail.com', port=587) as smtp:
-        smtp.ehlo()
-        smtp.starttls()
-        smtp.login('YazdanBaft.co@gmail.com', 'xswrjyiydermfyji')
-        smtp.send_message(email)
+    with smtplib.SMTP(host=smtp_server, port=port) as server:
+        server.ehlo()
+        server.starttls()
+        server.login(sender_email, password)
+        server.send_message(message)
         print('Email was sent!')

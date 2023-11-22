@@ -76,14 +76,18 @@ show_data = []
 
 
 def data_show():
-    query = "SELECT * FROM data WHERE name ILIKE '%{}%'".format(show_data[0])
-    cursor.execute(query)
+    if len(show_data) == 0:
+        file = open('log/db_log.txt', 'a')
+        file.write(f'**show_data is empty, in {datetime.datetime.today()}!\n')
+        file.close()
+        return
+
+    query = "SELECT * FROM data WHERE name ILIKE %s"
+    cursor.execute(query, ('%' + show_data[0] + '%',))
     records = cursor.fetchall()
     for record in records:
         data_show_var.append(record)
-        print(record)
-    for item in show_data:
-        show_data.remove(item)
+
 
 
 show_all_val = []
@@ -151,14 +155,16 @@ def change_situation(row_index):
 
 
 selected_number = []
+insert_number = []
 
 
 def select_exporter():
     try:
-        cursor.execute(f"SELECT number FROM data")
+        query = (f"SELECT number FROM data WHERE id = %s")
+        cursor.execute(query, insert_number[0])
         records = cursor.fetchall()
         for item in records:
-            selected_number.append(item[0])
+            selected_number.append(item)
     except Exception as ex:
         file0 = open('log/db_log.txt', 'a')
         file0.write(f'**data dos"nt exist. error {ex} in {datetime.datetime.today()}!\n')
@@ -173,11 +179,18 @@ def find_number_val():
         cursor.execute(f"SELECT number FROM data WHERE number LIKE '{0}'")
         records = cursor.fetchall()
         for item in records:
-            zero_number.append(item[0])
+            zero_number.append(item)
     except Exception as ex:
         file0 = open('log/db_log.txt', 'a')
         file0.write(f'**data dos"nt exist. error {ex} in {datetime.datetime.today()}!\n')
         file0.close()
+
+
+def __search_del__():
+    for item in show_data:
+        show_data.remove(item)
+    for item in data_show_var:
+        data_show_var.remove(item)
 
 
 # __situation__ = []
