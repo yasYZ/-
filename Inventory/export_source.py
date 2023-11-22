@@ -42,6 +42,7 @@ def export_tab(row_index):
         showinfo(title='Result', message=f'You selected{spin[0]}!')
         for x, y in zip(data.selected_number, spin):
             data.out_number.append(int(x[0]) - int(y))
+            print((int(x[0]) - int(y)))
             for item in spin:
                 spin.remove(item)
 

@@ -128,17 +128,26 @@ def del_all_showed_data():
 
 
 def update_query(row_index):
-    update_query_postreSQL = f"""
+    # if len(out_number) == 0:
+    #     print("Error: out_number is empty")
+    #     file0 = open('log/db_log.txt', 'a')
+    #     file0.write(f'**Error: out_number is empty, in {datetime.datetime.today()}!\n')
+    #     file0.close()
+    #     return
+
+    update_query_postreSQL = """
     UPDATE 
         data 
     SET 
-        number = '{out_number[0]}' 
-    WHERE id = %s;"""
-    number = str(row_index + 1)
-    cursor.execute(update_query_postreSQL, number)
+        number = %s 
+    WHERE 
+        id = %s;"""
+
+    number = str(out_number[0])
+    cursor.execute(update_query_postreSQL, (number, row_index))
     conn.commit()
-    for item in out_number:
-        out_number.remove(item)
+
+    out_number.clear()
 
 
 def change_situation(row_index):
