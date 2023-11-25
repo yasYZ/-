@@ -11,6 +11,8 @@ windows.title("انبار داری یزدان بافت | pxc")
 
 # add source tab
 
+data.organization()
+
 Tab_control = ttk.Notebook(windows, width=5, height=1)
 adding_resource_tab1 = ttk.Frame(Tab_control)
 Tab_control.add(adding_resource_tab1, text="اضافه کردن کالا")
@@ -268,7 +270,7 @@ def value():
 
 
 def create_button(index, name):
-    detail_button = tk.Button(export_resource_tab2, width=55, text=f" ترخیص کالا/نمایش نتایج/ {name} (ردیف کالا{index})", fg="blue", bg="white", command=lambda: export_source.export_tab(index-1))
+    detail_button = tk.Button(export_resource_tab2, width=55, text=f" ترخیص کالا/نمایش نتایج/ {name} (ردیف کالا{index})", fg="blue", bg="white", command=lambda: export_source.export_tab(index-1, name))
     detail_button.pack()
 
 
@@ -295,5 +297,8 @@ def submit():
 # Tab_control.pack(expand=1, fill="both")
 
 windows.geometry("500x500")
+
+photo = tk.PhotoImage(file="../logoyazdan_32x32.ico")
+windows.iconphoto(False, photo)
 
 windows.mainloop()

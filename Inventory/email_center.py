@@ -45,7 +45,7 @@ def email_export_sender(name, number):
     message.set_content(f"""
 جناب محمد یزدانی عارف!
     
-محصول {name} به تعداد {number} در تاریخ {datetime.datetime.today()} خارج شد    
+محصول {name} به تعداد {number} در تاریخ {datetime.datetime.today()}از انبار خارج شد    
 **_______________________________________________________________________________**
 this message for YazdanBaft Inventory application
 CopyRighted by YazdanBaft

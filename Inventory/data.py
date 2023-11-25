@@ -10,7 +10,6 @@ in_Situation = ['در انبار']
 Up_Situation = []
 input_id = []
 user_id = []
-out_number = []
 try:
     conn = psycopg2.connect(
         host="localhost",
@@ -127,14 +126,10 @@ def del_all_showed_data():
         show_all_val.remove(item)
 
 
-def update_query(row_index):
-    # if len(out_number) == 0:
-    #     print("Error: out_number is empty")
-    #     file0 = open('log/db_log.txt', 'a')
-    #     file0.write(f'**Error: out_number is empty, in {datetime.datetime.today()}!\n')
-    #     file0.close()
-    #     return
+out_number = []
 
+
+def update_query(row_index):
     update_query_postreSQL = """
     UPDATE 
         data 
@@ -142,9 +137,9 @@ def update_query(row_index):
         number = %s 
     WHERE 
         id = %s;"""
-
     number = str(out_number[0])
-    cursor.execute(update_query_postreSQL, (number, row_index))
+    print(number)
+    cursor.execute(update_query_postreSQL, (number, row_index+1))
     conn.commit()
 
     out_number.clear()
@@ -169,7 +164,7 @@ insert_number = []
 
 def select_exporter():
     try:
-        query = (f"SELECT number FROM data WHERE id = %s")
+        query = f"SELECT number FROM data WHERE id = %s"
         cursor.execute(query, insert_number[0])
         records = cursor.fetchall()
         for item in records:
@@ -200,6 +195,27 @@ def __search_del__():
         show_data.remove(item)
     for item in data_show_var:
         data_show_var.remove(item)
+
+
+def organization():
+    query = """
+        SELECT *
+        FROM data  
+        ORDER BY CAST(id AS INTEGER);
+    """
+
+    cursor.execute(query)
+    rows = cursor.fetchall()
+
+    for i, row in enumerate(rows, start=1):
+        update_query = """
+            UPDATE data
+            SET id = %s
+            WHERE id = %s;
+        """
+        cursor.execute(update_query, (i, row[0]))
+
+    conn.commit()
 
 
 # __situation__ = []

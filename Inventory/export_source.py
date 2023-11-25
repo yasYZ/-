@@ -6,7 +6,7 @@ import data
 import email_center
 
 
-def export_tab(row_index):
+def export_tab(row_index, name):
     export_page = tk.Tk()
     export_page.title("ترخیص کالا | PXC")
 
@@ -37,14 +37,14 @@ def export_tab(row_index):
 
     def value_changed_spin():
         """show Number data"""
+        data.insert_number.append(str(row_index+1))
         data.select_exporter()
         spin = [spin_box.get()]
-        showinfo(title='Result', message=f'You selected{spin[0]}!')
         for x, y in zip(data.selected_number, spin):
-            data.out_number.append(int(x[0]) - int(y))
-            print((int(x[0]) - int(y)))
+            data.out_number.append(str(int(x[0]) - int(y)))
             for item in spin:
                 spin.remove(item)
+        showinfo(title='Result', message=f'You selected{spin_box.get()}!')
 
     def exporter_activate():
         value_changed_spin()
@@ -53,13 +53,20 @@ def export_tab(row_index):
             file0 = open('log/ui_log.txt', 'a')
             file0.write(f'**data does not exist. error in {datetime.datetime.today()}!\n')
             file0.close()
-        elif data.zero_number == [0]:
+        elif int(data.out_number[0]) < 0:
+            showinfo(
+                title="Result",
+                message="""این مقدار از کالا در انبار موجود نمیباشد لطفا در کسر کالا دقت فرمایید"""
+            )
+            return
+        elif data.zero_number == ['0'] or [0]:
             data.change_situation(row_index)
             data.update_query(row_index)
             showinfo(
                 title="با موفقیت انجام شد",
                 message="""کالا با موفقبت از سیستم انبارداری خارج شد اپ به طور خودکار بسته میشود در صورت استفاده دوباره اپ را دوباره باز کنین"""
             )
+            email_center.email_export_sender(name=name, number=spin_box.get())
             exit(0)
         else:
             # __index__ = row_index + 1
@@ -68,13 +75,14 @@ def export_tab(row_index):
                 title="با موفقیت انجام شد",
                 message="""کالا با موفقبت از سیستم انبارداری خارج شد اپ به طور خودکار بسته میشود در صورت استفاده دوباره اپ را دوباره باز کنین"""
             )
+            email_center.email_export_sender(name=name, number=spin_box.get())
             exit(0)
 
     btn = tk.Button(export_page, text="Submit", width=10, height=2, bg="blue", fg="white", command=exporter_activate)
     btn.pack()
     data.del_all_showed_data()
     export_page.geometry("300x500")
-    # icon = tk.PhotoImage(file="../yazdan30x30.png")
+    # icon = tk.PhotoImage(file="../yazdan30x30.ico")
     # export_page.iconphoto(False, icon)
     export_page.mainloop()
 
@@ -110,8 +118,8 @@ def export_tab_search(row_index, name):
 
     def value_changed_spin():
         """show Number data"""
-        data.select_exporter()
         data.insert_number.append(row_index+1)
+        data.select_exporter()
         spin = [spin_box.get()]
         showinfo(title='Result', message=f'You selected{spin[0]}!')
         for x, y in zip(data.selected_number, spin):
@@ -147,6 +155,6 @@ def export_tab_search(row_index, name):
     btn.pack()
     data.del_all_showed_data()
     export_page.geometry("300x500")
-    # icon = tk.PhotoImage(file="../yazdan30x30.png")
+    # icon = tk.PhotoImage(file="../yazdan30x30.ico")
     # export_page.iconphoto(False, icon)
     export_page.mainloop()
