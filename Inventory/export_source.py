@@ -82,7 +82,7 @@ def export_tab(row_index, name):
     btn.pack()
     data.del_all_showed_data()
     export_page.geometry("300x500")
-    # icon = tk.PhotoImage(file="../yazdan30x30.ico")
+    # icon = tk.PhotoImage(file="../logoyazdan_32x32.ico")
     # export_page.iconphoto(False, icon)
     export_page.mainloop()
 
@@ -118,12 +118,12 @@ def export_tab_search(row_index, name):
 
     def value_changed_spin():
         """show Number data"""
-        data.insert_number.append(row_index+1)
+        data.insert_number.append(str(row_index+1))
         data.select_exporter()
         spin = [spin_box.get()]
         showinfo(title='Result', message=f'You selected{spin[0]}!')
         for x, y in zip(data.selected_number, spin):
-            data.out_number.append(int(x[0]) - int(y))
+            data.out_number.append(str(int(x[0]) - int(y)))
             for item in spin:
                 spin.remove(item)
 
@@ -134,7 +134,13 @@ def export_tab_search(row_index, name):
             file0 = open('log/ui_log.txt', 'a')
             file0.write(f'**data does not exist. error in {datetime.datetime.today()}!\n')
             file0.close()
-        elif data.zero_number == '0':
+        elif int(data.out_number[0]) < 0:
+            showinfo(
+                title="Result",
+                message="""این مقدار از کالا در انبار موجود نمیباشد لطفا در کسر کالا دقت فرمایید"""
+            )
+            return
+        elif data.zero_number == '0' or [0]:
             data.change_situation(row_index)
             data.update_query(row_index)
             showinfo(
@@ -155,6 +161,6 @@ def export_tab_search(row_index, name):
     btn.pack()
     data.del_all_showed_data()
     export_page.geometry("300x500")
-    # icon = tk.PhotoImage(file="../yazdan30x30.ico")
+    # icon = tk.PhotoImage(file="../logoyazdan_32x32.ico")
     # export_page.iconphoto(False, icon)
     export_page.mainloop()
