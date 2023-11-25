@@ -21,7 +21,7 @@ def email_input_sender(name, number, category):
     this message for YazdanBaft Inventory application
     CopyRighted by YazdanBaft
     """)
-    message['Subject'] = 'Subject of your email'
+    message['Subject'] = 'انبارداری یزدان بافت'
     message['From'] = sender_email
     message['To'] = receiver_email
 
@@ -50,7 +50,7 @@ def email_export_sender(name, number):
 this message for YazdanBaft Inventory application
 CopyRighted by YazdanBaft
 """)
-    message['Subject'] = 'Subject of your email'
+    message['Subject'] = 'انبارداری یزدان بافت'
     message['From'] = sender_email
     message['To'] = receiver_email
 
