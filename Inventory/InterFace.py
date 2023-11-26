@@ -182,16 +182,23 @@ btn2 = tk.Button(adding_resource_tab1, height=2, width=10, text="Submit", bg="bl
 btn2.pack()
 
 # export source tab
-
 export_resource_tab2 = ttk.Frame(Tab_control)
 Tab_control.add(export_resource_tab2, text="ترخیص کالا/نمایش نتایج")
 Tab_control.pack(expand=1, fill="both")
 
+canvas = tk.Canvas(export_resource_tab2)
+canvas.pack(fill=tk.BOTH, expand=True)
+
+scrollbar = ttk.Scrollbar(export_resource_tab2, orient=tk.VERTICAL, command=canvas.yview)
+scrollbar.pack(side=tk.RIGHT, fill=tk.Y)
+canvas.configure(yscrollcommand=scrollbar.set)
+
+content_frame = ttk.Frame(canvas)
+canvas.create_window((0, 0), window=content_frame, anchor=tk.NW)
 
 selected_var4 = tk.StringVar()
-lbl6 = tk.Label
 combo3 = ttk.Combobox(export_resource_tab2, width=17, height=1, textvariable=selected_var4)
-combo3["values"] = "همه", "جستجو"
+combo3["values"] = ("همه", "جستجو")
 combo3.set("همه")
 combo3.pack()
 
@@ -200,9 +207,9 @@ index1 = [0]
 
 def find_search_box_val():
     """show Entry var"""
-    lbl10 = tk.Label(export_resource_tab2, text="search")
+    lbl10 = tk.Label(content_frame, text="search")
     lbl10.pack()
-    search_box = tk.Entry(export_resource_tab2)
+    search_box = tk.Entry(content_frame)
     search_box.pack()
 
     def search():
@@ -219,7 +226,7 @@ def find_search_box_val():
             file = open('log/ui_log.txt', 'a')
             file.write(f'**user dont change topic()!\n')
             file.close()
-    btn4 = tk.Button(export_resource_tab2, text="جستجو", bg="blue", fg="white", command=search)
+    btn4 = tk.Button(content_frame, text="جستجو", bg="blue", fg="white", command=search)
     btn4.pack()
 
 
@@ -270,18 +277,25 @@ def value():
 
 
 def create_button(index, name):
-    detail_button = tk.Button(export_resource_tab2, width=55, text=f" ترخیص کالا/نمایش نتایج/ {name} (ردیف کالا{index})", fg="blue", bg="white", command=lambda: export_source.export_tab(index-1, name))
+    detail_button = tk.Button(content_frame, width=55, text=f" ترخیص کالا/نمایش نتایج/ {name} (ردیف کالا{index})", fg="blue", bg="white", command=lambda: export_source.export_tab(index-1, name=name))
     detail_button.pack()
 
 
 def create_button_search(index, name):
-    detail_button = tk.Button(export_resource_tab2, width=55, text=f" ترخیص کالا/نمایش نتایج/ {name} (ردیف کالا{index})", fg="blue", bg="white", command=lambda: export_source.export_tab_search(index-1, name))
+    detail_button = tk.Button(content_frame, width=55, text=f" ترخیص کالا/نمایش نتایج/ {name} (ردیف کالا{index})", fg="blue", bg="white", command=lambda: export_source.export_tab_search(index-1, name=name))
     detail_button.pack()
 
 
 def submit():
-    btn3 = tk.Button(export_resource_tab2, height=2, width=10, text="Submit", bg="blue", fg="white", command=value)
+    btn3 = tk.Button(content_frame, height=2, width=10, text="Submit", bg="blue", fg="white", command=value)
     btn3.pack()
+
+
+content_frame.bind("<Configure>", lambda e: canvas.configure(scrollregion=canvas.bbox("all")))
+
+content_frame_window = canvas.create_window((0, 0), window=content_frame, anchor=tk.NW)
+canvas.bind("<Configure>", lambda e: canvas.itemconfig(content_frame_window, width=e.width))
+canvas.bind_all("<MouseWheel>", lambda e: canvas.yview_scroll(int(-1 *(e.delta / 120)), "units"))
 
 # coming soon for 2.0V...
 # change source tab
