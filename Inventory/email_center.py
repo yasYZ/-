@@ -8,7 +8,7 @@ def email_input_sender(name, number, category):
     port = 587  # For SSL
     smtp_server = "smtp.gmail.com"
     sender_email = "yazdanbaft.co@gmail.com"  # Enter your address
-    receiver_email = "mpouri1001@gmail.com"  # Enter receiver address
+    receiver_email = "yasinyazdani71@gmail.com"  # Enter receiver address
     password = "xswrjyiydermfyji"
 
     message = EmailMessage()
@@ -38,7 +38,7 @@ def email_export_sender(name, number):
     port = 587  # For SSL
     smtp_server = "smtp.gmail.com"
     sender_email = "yazdanbaft.co@gmail.com"  # Enter your address
-    receiver_email = "mpouri1001@gmail.com"  # Enter receiver address
+    receiver_email = "yasinyazdani71@gmail.com"  # Enter receiver address
     password = "xswrjyiydermfyji"
 
     message = EmailMessage()

@@ -42,6 +42,8 @@ def export_tab(row_index, name):
         spin = [spin_box.get()]
         for x, y in zip(data.selected_number, spin):
             data.out_number.append(str(int(x[0]) - int(y)))
+            if int(data.out_number[0]) == 0:
+                data.change_situation(row_index)
             for item in spin:
                 spin.remove(item)
         showinfo(title='Result', message=f'You selected{spin_box.get()}!')
@@ -60,7 +62,6 @@ def export_tab(row_index, name):
             )
             return
         elif data.zero_number == ['0'] or [0]:
-            data.change_situation(row_index)
             data.update_query(row_index)
             showinfo(
                 title="با موفقیت انجام شد",
@@ -121,11 +122,13 @@ def export_tab_search(row_index, name):
         data.insert_number.append(str(row_index+1))
         data.select_exporter()
         spin = [spin_box.get()]
-        showinfo(title='Result', message=f'You selected{spin[0]}!')
         for x, y in zip(data.selected_number, spin):
             data.out_number.append(str(int(x[0]) - int(y)))
+            if int(data.out_number[0]) == 0:
+                data.change_situation(row_index)
             for item in spin:
                 spin.remove(item)
+        showinfo(title='Result', message=f'You selected{spin_box.get()}!')
 
     def exporter_activate():
         value_changed_spin()
@@ -141,7 +144,6 @@ def export_tab_search(row_index, name):
             )
             return
         elif data.zero_number == '0' or [0]:
-            data.change_situation(row_index)
             data.update_query(row_index)
             showinfo(
                 title="با موفقیت انجام شد",
