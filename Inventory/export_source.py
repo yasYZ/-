@@ -61,14 +61,6 @@ def export_tab(row_index, name):
                 message="""این مقدار از کالا در انبار موجود نمیباشد لطفا در کسر کالا دقت فرمایید"""
             )
             return
-        elif data.zero_number == ['0'] or [0]:
-            data.update_query(row_index)
-            showinfo(
-                title="با موفقیت انجام شد",
-                message="""کالا با موفقبت از سیستم انبارداری خارج شد اپ به طور خودکار بسته میشود در صورت استفاده دوباره اپ را دوباره باز کنین"""
-            )
-            email_center.email_export_sender(name=name, number=spin_box.get())
-            exit(0)
         else:
             # __index__ = row_index + 1
             data.update_query(row_index)
@@ -143,14 +135,6 @@ def export_tab_search(row_index, name):
                 message="""این مقدار از کالا در انبار موجود نمیباشد لطفا در کسر کالا دقت فرمایید"""
             )
             return
-        elif data.zero_number == '0' or [0]:
-            data.update_query(row_index)
-            showinfo(
-                title="با موفقیت انجام شد",
-                message="""کالا با موفقبت از سیستم انبارداری خارج شد اپ به طور خودکار بسته میشود در صورت استفاده دوباره اپ را دوباره باز کنین"""
-            )
-            email_center.email_export_sender(name=row_index, number=spin_box.get())
-            exit(0)
         else:
             data.update_query(row_index)
             showinfo(
