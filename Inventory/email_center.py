@@ -31,7 +31,6 @@ def email_input_sender(name, number, category):
         server.login(sender_email, password)
         server.send_message(message)
         print('Email was sent!')
-        exit()
 
 
 def email_export_sender(name, number):
